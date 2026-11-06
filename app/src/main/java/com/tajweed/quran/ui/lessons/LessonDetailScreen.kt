@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.sp
 import com.tajweed.quran.data.TajweedContent
 import com.tajweed.quran.data.model.Rule
 import com.tajweed.quran.ui.components.ArabicText
+import com.tajweed.quran.ui.components.MakharijDiagram
 import com.tajweed.quran.ui.components.ScreenHeader
 import com.tajweed.quran.ui.i18n.t
 import com.tajweed.quran.ui.i18n.tr
@@ -97,6 +98,10 @@ fun LessonDetailScreen(
                         Text(intro.t(), Modifier.padding(16.dp), fontSize = 15.sp, lineHeight = 26.sp, color = TextDark)
                     }
                 }
+            }
+
+            if (lessonId == "makharij") {
+                item { MakharijDiagram() }
             }
 
             itemsIndexed(lesson.rules) { index, rule ->
