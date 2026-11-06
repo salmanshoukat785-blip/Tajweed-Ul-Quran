@@ -55,7 +55,7 @@ class AppViewModel(app: Application) : AndroidViewModel(app) {
         get() = if (answeredTotal == 0) 0 else correctAnswers * 100 / answeredTotal
 
     // ── actions ───────────────────────────────────────────────────────
-    fun setLanguage(lang: AppLanguage) {
+   @JvmName("applyLanguage") fun setLanguage(lang: AppLanguage) {
         language = lang
         prefs.language = lang.code
     }
